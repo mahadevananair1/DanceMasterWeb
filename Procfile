@@ -1,1 +1,1 @@
-web: gunicorn scorekeeper.wsgi --log-file -
+web: gunicorn dancemaster.wsgi --log-file -
