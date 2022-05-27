@@ -1,0 +1,78 @@
+
+
+
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Dence Master</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body class="container">
+        <div class="jumbotron">
+            <h1 class="display-4 text-center" style="font-family: 'Pacifico', cursive; font-size: 80px;">Dance Master</h1>
+            <p class="lead text-center">An Computer vision Game Exclusively made for HESTIA 22. Come on with your friends and join the fun !!!</p>
+            <hr class="my-4">
+            <p> Amazing Prizes will be unlocked for Top Ranked player!! Dancers get ready for a epic battle </p>
+           
+          </div>
+
+          <div class="alert alert-warning" role="alert">
+            Refresh this Website to update the scoreboard
+          </div>
+
+      <table class="table table-striped form-control-md">
+        <thead class="thead-primary alert alert-primary">
+          <tr>
+            <th scope="col">Ranking</th>
+            <th scope="col">Player Name</th>
+            <th scope="col">Score</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+    
+    {% for x in name %} 
+    
+        {% if forloop.counter0 == 0 %}  
+          <tr class="bg-warning bg-gradient">
+            <th scope="row" style="font-size: 30px;" >{{ forloop.counter0|add:1 }}</th>
+            <td style="font-size: 25px;">{{ x.name }}</td>
+            <td style="font-family: 'Alfa Slab One', cursive;font-size: 30px;">{{ x.score }}</td>
+          </tr>
+        {% elif forloop.counter0 == 1 %}
+        <tr class="bg-secondary bg-gradient text-light">
+            <th scope="row" style="font-size: 22px;">{{ forloop.counter0|add:1 }}</th>
+            <td style="font-size: 22px;">{{ x.name }}</td>
+            <td style="font-family: 'Alfa Slab One', cursive;font-size: 22px;">{{ x.score }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <th scope="row">{{ forloop.counter0|add:1 }}</th>
+            <td>{{ x.name }}</td>
+            <td>{{ x.score }}</td>
+        </tr>
+        {% endif %}
+    {% empty %}
+          <td>NONE</td>
+    {% endfor %}
+    
+         
+        </tbody>
+      </table>
+      <hr>
+      <div class="alert alert-info" role="alert">
+        @DanceMaster 2022™️
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </body>
+  </html>
+
